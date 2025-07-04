@@ -1,0 +1,240 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-bg: #060b14;
+    --secondary-bg: #101929;
+    --container-bg: rgba(17, 24, 39, 0.75);
+    --accent-purple: #a855f7;
+    --accent-purple-dark: #7e22ce;
+    --border-color: rgba(168, 85, 247, 0.3);
+    --shadow-color: rgba(168, 85, 247, 0.4);
+    --text-light: #d1d5db;
+    --text-white: #ffffff;
+    --text-muted: #6b7280;
+    --text-highlight: #c084fc;
+    --divider-color: rgba(168, 85, 247, 0.2);
+    --youtube-red: #CC0000;
+    --youtube-red-dark: #a00;
+    --youtube-shadow: rgba(204, 0, 0, 0.4);
+}
+
+/* --- Base & Body --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-display: swap; /* Improves Speed Index */
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* --- Main Container --- */
+.container {
+    max-width: 512px;
+    width: 100%;
+    background-color: var(--container-bg);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* --- Profile Section --- */
+.profile {
+    margin-bottom: 28px;
+}
+
+.profile-pic {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-purple);
+    object-fit: cover;
+    box-shadow: 0 0 0 4px rgba(126, 34, 206, 0.5);
+    margin-bottom: 16px;
+}
+
+.profile-name {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.profile-bio {
+    font-size: 1rem; /* تصغير الخط قليلاً */
+    color: var(--text-light);
+    margin-top: 8px;
+    text-align: center;
+    margin: 0;
+}
+
+.profile-bio strong {
+    color: #4ade80;
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* --- Links Section --- */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* إزالة المسافة بين الأزرار بالكامل */
+}
+
+.link-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--accent-purple-dark) 0%, var(--accent-purple) 50%, var(--accent-purple-dark) 100%);
+    background-size: 200% auto;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.link-button:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px var(--shadow-color);
+}
+
+.link-button .button-image {
+    width: 100%;
+    height: 200px; /* تكبير الصورة بشكل ملحوظ */
+    object-fit: cover; /* تجعل الصورة تملأ الإطار مع قص الأطراف */
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* مسافة بين الأيقونات */
+    flex-wrap: wrap;
+}
+
+.social-title {
+    font-size: 1rem; /* حجم خط صغير */
+    color: #ccc; /* لون رمادي فاتح */
+    margin-top: 10px; /* إضافة مسافة صغيرة فوق العنوان */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.link-button.youtube-button {
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--youtube-red-dark) 0%, var(--youtube-red) 50%, var(--youtube-red-dark) 100%);
+    box-shadow: 0 4px 15px var(--youtube-shadow);
+}
+
+.link-button.youtube-button:hover {
+    box-shadow: 0 7px 20px var(--youtube-shadow);
+}
+
+.button-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.button-subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    padding-left: 10px;
+    margin-left: 4px;
+}
+
+.button-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.link-button.youtube-button svg {
+    width: 35px; /* تكبير الأيقونة قليلاً */
+    height: 35px;
+    fill: white; /* تغيير اللون إلى الأبيض */
+}
+
+/* --- Divider --- */
+.divider {
+    height: 1px;
+    background-color: var(--divider-color);
+    margin: 4px auto; /* تقليل المسافة حول الخط الفاصل للحد الأدنى */
+    width: 60%;
+    border: none;
+}
+
+/* --- Social Links --- */
+.socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background-color: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-white);
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.social-icon:hover {
+    background-color: rgba(168, 85, 247, 0.2);
+    border-color: var(--accent-purple);
+    transform: translateY(-3px);
+}
+
+/* --- Footer --- */
+.footer {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer span {
+    color: var(--text-highlight);
+}
